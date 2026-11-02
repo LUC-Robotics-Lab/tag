@@ -1,0 +1,14 @@
+# @package _global_
+# RU025 (tag_chase_adapt, evader_rate_step 0.025) plus the dense goal-reaching policy (goal_scratch_lim G2_s0,
+# model_19999) in the league from iteration 0: never evicted, always the pursuer (it cannot evade), so the
+# learner evades a walking chaser in those envs. Learner trained from scratch (2026-10-23).
+defaults:
+  - tag_chase_adapt
+  - _self_
+
+league:
+  evader_rate_step: 0.025
+  pursuer_pool: [logs/mofo/goal/goal_scratch_lim/G2_s0/model_19999.pt]
+
+wandb:
+  tags: [tag_chase, tag_chase_adapt, goal_opponent]
